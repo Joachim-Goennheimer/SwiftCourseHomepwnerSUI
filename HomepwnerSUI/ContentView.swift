@@ -9,13 +9,36 @@
 import SwiftUI
 
 struct ContentView: View {
+    var items: [Item] = []
+    
     var body: some View {
-        Text("Hello, World!")
+        NavigationView {
+            List(items) { item in
+                itemCellView(item: item)
+        }
+        .navigationBarTitle(Text("Homepwner"))
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(items: exampleData)
+    }
+}
+
+struct itemCellView: View {
+    
+    var item: Item
+    var body: some View {
+        NavigationLink(destination: Text(item.name)) {
+            VStack {
+                Text(item.name)
+                Text(item.serialNumber)
+                    .foregroundColor(.secondary)
+            }
+            Text("\(item.valueInDollars)$")
+                .multilineTextAlignment(.trailing)
+        }
     }
 }
