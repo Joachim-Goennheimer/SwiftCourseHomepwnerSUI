@@ -17,6 +17,8 @@
 		9AA22AEE248042EC000C01D2 /* HomepwnerSUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA22AED248042EC000C01D2 /* HomepwnerSUIUITests.swift */; };
 		9AA22AFC2480464C000C01D2 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA22AFB2480464C000C01D2 /* Item.swift */; };
 		9AA22AFE24804DDF000C01D2 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA22AFD24804DDF000C01D2 /* ItemDetailView.swift */; };
+		9AA22B0024805B68000C01D2 /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA22AFF24805B68000C01D2 /* ItemStore.swift */; };
+		9AA22B0224805B85000C01D2 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA22B0124805B85000C01D2 /* ImageStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		9AA22AEF248042EC000C01D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9AA22AFB2480464C000C01D2 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		9AA22AFD24804DDF000C01D2 /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
+		9AA22AFF24805B68000C01D2 /* ItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
+		9AA22B0124805B85000C01D2 /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,8 @@
 				9AA22AFB2480464C000C01D2 /* Item.swift */,
 				9AA22ACF248042E0000C01D2 /* ContentView.swift */,
 				9AA22AFD24804DDF000C01D2 /* ItemDetailView.swift */,
+				9AA22AFF24805B68000C01D2 /* ItemStore.swift */,
+				9AA22B0124805B85000C01D2 /* ImageStore.swift */,
 				9AA22AD1248042EB000C01D2 /* Assets.xcassets */,
 				9AA22AD6248042EB000C01D2 /* LaunchScreen.storyboard */,
 				9AA22AD9248042EB000C01D2 /* Info.plist */,
@@ -275,8 +281,10 @@
 			files = (
 				9AA22AFE24804DDF000C01D2 /* ItemDetailView.swift in Sources */,
 				9AA22AFC2480464C000C01D2 /* Item.swift in Sources */,
+				9AA22B0024805B68000C01D2 /* ItemStore.swift in Sources */,
 				9AA22ACC248042E0000C01D2 /* AppDelegate.swift in Sources */,
 				9AA22ACE248042E0000C01D2 /* SceneDelegate.swift in Sources */,
+				9AA22B0224805B85000C01D2 /* ImageStore.swift in Sources */,
 				9AA22AD0248042E0000C01D2 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

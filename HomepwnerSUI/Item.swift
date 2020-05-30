@@ -10,24 +10,51 @@
 
 import SwiftUI
 
-struct Item: Identifiable {
+struct Item: Identifiable{
     
     var id = UUID()
     var name: String
-    var valueInDollars: Int
+    @State var valueInDollars: Int
+    var valueInDollarsString: String
     var serialNumber: String
-//    var dateCreated: Date
+    var dateCreated: Date = Date()
+    var image: UIImage = UIImage()
 //    let itemKey: String
+    
+    func getDateCreatedString() -> String {
+        return dateFormatter.string(from: dateCreated)
+    }
+    
+    let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        return formatter
+    }()
+    
+    func setValueInDollars(valueString: String) {
+        self.valueInDollars = Int(valueString)!
+//        self.valueInDollarsString = valueString!
+    }
     
 }
 
-let exampleData = [
-    Item(name: "test", valueInDollars: 20, serialNumber: "2018"),
-    Item(name: "chair2", valueInDollars: 23, serialNumber: "2020"),
-    Item(name: "Chair", valueInDollars: 20, serialNumber: "2015"),
-    Item(name: "Table", valueInDollars: 25, serialNumber: "2016"),
-    Item(name: "Lamp", valueInDollars: 12, serialNumber: "2017")
-]
+//let exampleData = [
+//    Item(name: "test", valueInDollars: 20, serialNumber: "2018"),
+//    Item(name: "chair2", valueInDollars: 23, serialNumber: "2020"),
+//    Item(name: "Chair", valueInDollars: 20, serialNumber: "2015"),
+//    Item(name: "Table", valueInDollars: 25, serialNumber: "2016"),
+//    Item(name: "Lamp", valueInDollars: 12, serialNumber: "2017")
+//]
+
+extension Date {
+   func formatDate(format: String) -> String {
+        let dateformat = DateFormatter()
+        dateformat.dateFormat = format
+        return dateformat.string(from: self)
+    
+    }
+}
 
 
 
