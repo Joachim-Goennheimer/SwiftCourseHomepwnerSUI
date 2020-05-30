@@ -20,7 +20,7 @@ struct ItemDetailView: View {
     
     var body: some View {
         
-        VStack {
+        VStack(spacing: 50) {
             VStack {
                 HStack {
                     Text("Name")
@@ -45,6 +45,7 @@ struct ItemDetailView: View {
                     }
                 }
             }
+            .font(.system(size: 20))
             Text("Date Created: \(self.item.getDateCreatedString())")
             Image(uiImage: itemImage)
             .resizable()
@@ -53,22 +54,20 @@ struct ItemDetailView: View {
                 .clipped()
             Button(action: {
                 self.isShowingImagePicker.toggle()
-            }, label: {
-                Text("Select Image")
-                    .font(.system(size: 32))
-            })
+            }) {Image.init(systemName: "camera")
+                .resizable()
+                .scaledToFill()
+            .frame(width: 50, height: 50)
+            }
             .sheet(isPresented: $isShowingImagePicker, content: {
                 ImagePickerView(isPresented: self.$isShowingImagePicker, selectedImage: self.$itemImage)
             })
             
+//                loading image from Item if possible.
                 .onAppear() {
-                
                 self.itemImage = self.item.image
-//                if(self.item.image != nil) {
-//                    self.itemImage = self.item.image ?? UIImage()
-//                }
             }
-            
+//            laving image in Item.
             .onDisappear() {
                 self.item.image = self.itemImage
             }

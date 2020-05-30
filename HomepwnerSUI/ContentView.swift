@@ -22,8 +22,8 @@ struct ContentView: View {
 //        Item(name: "Table", valueInDollars: 25, serialNumber: "2016"),
 //        Item(name: "Lamp", valueInDollars: 12, serialNumber: "2017")
         
-        Item(name: "Table", valueInDollars: 25, valueInDollarsString: "25", serialNumber: "2016"),
-        Item(name: "Lamp", valueInDollars: 12, valueInDollarsString: "12", serialNumber: "2017")
+        Item(name: "Shiny Mac", valueInDollars: 99, valueInDollarsString: "99", serialNumber: "A2DF29DG"),
+        Item(name: "Rusty Mac", valueInDollars: 10, valueInDollarsString: "10", serialNumber: "EB23DFI5")
     ]
     
     var body: some View {
@@ -31,6 +31,7 @@ struct ContentView: View {
             List {
                 Section {
                     ForEach(allItems) { item in
+//                        put in new view to make code more modular
                         itemCellView(item: item)
                                    }
                     .onDelete(perform: onDelete)
@@ -69,6 +70,7 @@ struct ContentView: View {
         allItems.move(fromOffsets: source, toOffset: destination)
     }
     
+//    originally intended to manage all items in ItemStore. Didn't work out so did it here.
     private func createRandomItem() -> Item {
         
         let adjectives = ["Fluffy", "Rusty", "Shiny"]
@@ -101,7 +103,8 @@ struct itemCellView: View {
     @State var item: Item
     var body: some View {
         NavigationLink(destination: ItemDetailView(item: $item)) {
-            HStack {
+//            not the nicest solution for bringing value to right side. Couldn't find a better one in reasonable time.
+            HStack(spacing: 170) {
                 VStack {
                     Text(item.name)
                     Text(item.serialNumber)
