@@ -8,6 +8,8 @@
 
 // import Foundation
 
+// Class not used anymore. Originally tried to use it for managing items. Here only for reference
+
 import SwiftUI
 import Combine
 
