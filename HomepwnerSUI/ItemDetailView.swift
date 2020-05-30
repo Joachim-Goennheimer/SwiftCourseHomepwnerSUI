@@ -25,10 +25,18 @@ struct ItemDetailView: View {
                 HStack {
                     Text("Name")
                     TextField(self.item.name, text: self.$item.name)
+                    .overlay(
+                            RoundedRectangle(cornerRadius: 5)
+                                .stroke(lineWidth: 1)
+                    )
                 }
                 HStack {
                     Text("Serial")
                     TextField(self.item.serialNumber, text: self.$item.serialNumber)
+                    .overlay(
+                            RoundedRectangle(cornerRadius: 5)
+                                .stroke(lineWidth: 1)
+                    )
                 }
                 HStack {
                     Text("Value")
@@ -36,6 +44,10 @@ struct ItemDetailView: View {
 //                    Used string value as workaround. Have no idea why it works with String but not with integer,      probably a bug in Swift.
 //                    Works with string but cannot filter input before updating string.
                     TextField(self.item.valueInDollarsString, text: self.$item.valueInDollarsString)
+                        .overlay(
+                                RoundedRectangle(cornerRadius: 5)
+                                    .stroke(lineWidth: 1)
+                        )
                         .keyboardType(.numberPad)
                         .onReceive(Just(valueFieldString)) { newValue in
                             let filtered = newValue.filter { "0123456789".contains($0) }

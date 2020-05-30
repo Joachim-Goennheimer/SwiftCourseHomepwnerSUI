@@ -104,7 +104,7 @@ struct itemCellView: View {
     var body: some View {
         NavigationLink(destination: ItemDetailView(item: $item)) {
 //            not the nicest solution for bringing value to right side. Couldn't find a better one in reasonable time.
-            HStack(spacing: 170) {
+            HStack() {
                 VStack {
                     Text(item.name)
                     Text(item.serialNumber)
@@ -112,6 +112,7 @@ struct itemCellView: View {
                 }
                 Text("\(item.valueInDollarsString)$")
                         .multilineTextAlignment(.trailing)
+                        .frame(maxWidth: .infinity, alignment: .trailing)
                 }
             }
             .frame(height: CGFloat(60))
